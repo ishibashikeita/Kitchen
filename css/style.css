@@ -1,0 +1,1332 @@
+@charset "UTF-8";
+
+/*** 共通 ***/
+
+body {
+	font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-size: 16px;
+	margin: 0;
+	padding: 0;
+	color: rgb(149, 76, 11);
+	background-color: rgb(251, 246, 238);
+}
+
+body,h1,h2,h3,h4,p,ul,ol,img{
+  margin: 0;
+  padding: 0;}
+  
+ul,li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(149, 76, 11);
+}
+
+img{
+  vertical-align: bottom;
+}
+
+body {
+  width: 100%;
+}
+
+input {
+  color: rgb(149, 76, 11);
+} 
+
+input:focus {
+  outline: none;
+  border: 2px solid rgb(149, 76, 11);
+  background-color: bisque;
+}
+
+/** header **/
+header {
+  width: 100%;
+  height: 120px;
+}
+.header_logo img {
+  width: 240px;
+  padding: 10px 40px;
+  float: left;
+}
+.header_logo img:hover{
+  opacity: 0.8;
+}
+
+.navigation {
+  float: right;
+}
+.navigation ul {
+  margin: 70px 30px 0 0;
+}
+.navigation li {
+  display: inline-block;
+}
+.navigation li a {
+  margin-right: 40px;
+}
+
+.navigation img {
+  width: 20px;
+  margin-bottom: 5px;
+}
+
+.navigation li a {
+    position: relative;
+    display: inline-block;
+}
+
+.navigation li a::after {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: rgb(255, 145, 46);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.navigation li a:hover::after {
+    bottom: -4px;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/** footer **/
+footer {
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  padding-top: 35px;
+  border-top: solid 2px rgb(149, 76, 11);
+}
+
+.footer_copyright p {
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/** title **/
+.title {
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+.title h2 {
+  font-size: 36px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+.title h2:before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  display: inline-block;
+  width: 100px;
+  height: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: rgb(255, 145, 46);
+  border-radius: 2px;
+}
+
+
+/** formtable **/
+.formtable {
+  margin: 0 auto 35px;
+}
+.formtable th {
+  text-align: left;
+  padding: 25px;
+  border-bottom: 1.8px dotted #ffdead;
+}
+.formtable td {
+  padding: 10px 0 10px 50px;
+}
+.formtable span {
+  font-size: 10px;
+}
+
+.form_detail {
+  font-size: 12px;
+}
+
+#name_last,
+#name_first,
+#postcode,
+#address,
+#add_num,
+#phone,
+#birthday,
+#password,
+#email,
+#s_email,
+#s_name,
+#s_postcode,
+#s_address,
+#s_phone,
+#add_productname,
+#add_productprice,
+#add_productcom
+{
+  width: 220px;
+  height: 30px;
+  font-size: 15px;
+}
+
+
+/** submitbtn **/
+
+.submitbtn {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.submitbtn input {
+  width: 200px;
+  height: 40px;
+  font-size: 15px;
+  background-color: rgb(251, 246, 238);
+  border: 1.5px solid rgb(149, 76, 11);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitbtn input:hover {
+  background-color: rgba(255, 145, 46, .3);
+}
+
+
+.error {
+  font-size: 14px;
+}
+.red {
+  color: red;
+}
+
+
+
+/* confirmation.php */
+.confir_art {
+  width: 50%;
+  margin: 40px auto 65px;
+}
+
+.confir_name_box {
+  width: 300px;
+  border-bottom: 3px dotted rgb(247, 204, 148);
+}
+
+
+.confir_user_name {
+  box-sizing: border-box;
+  height: 40px;
+
+}
+
+.confir_user_name p {
+  padding-top: 5px;
+  margin-left: 15px;
+  font-size: 24px;
+}
+
+.confir_table {
+  width: 100%;
+  margin-top: 30px;
+  font-size: 18px;
+}
+#left{
+  padding-left: 13px;
+}
+#right {
+  text-align: right;
+  padding-right: 30px;
+}
+.confir_table td {
+  height: 55px;
+  border-bottom: 1px solid rgb(239, 182, 132);
+}
+.confir_shopdetail {
+  font-size: 24px;
+}
+.confir_shopdetail #right{
+  padding-left: 30px;
+  text-align: left;
+}
+.confir_coupon input {
+  height: 24px;
+  border: 1.5px solid rgb(149, 76, 11);
+  border-radius: 4px;
+}
+.confir_coupon button {
+  color: rgb(251, 246, 238);
+  background-color: rgb(124, 80, 42);
+  border: none;
+  border-radius: 4px;
+}
+.confir_coupon,
+.confir_total {
+  height: 73px;
+}
+.confir_total #right {
+  font-weight: bold;
+  font-size: 22px;
+}
+.confir_meettime {
+  height: 85px;
+}
+.confir_meettime select {
+  height: 42px;
+}
+
+.confir_top {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.confir_map {
+  width: 80%;
+  margin: 0 auto 80px;
+}
+
+.confir_map p {
+  text-align: center;
+  margin: auto;
+}
+
+.confir_map iframe {
+  height: auto;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+}
+
+.confir_submit input {
+  border: none;
+  width: 150px;
+  height: 30px;
+  margin-bottom: 100px;
+  color: rgb(251, 246, 238);
+  background-color: rgb(167, 113, 66);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confir_submit input:hover {
+  background-color: rgb(115, 73, 36);
+}
+
+/* Q&A */
+.qa_faq_box {
+  margin: 0 auto 100px;
+  width: 70%;
+}
+
+.question_list {
+  padding: 10px 30px;
+  background-color: #fffaf0;
+}
+.question_content {
+  padding: 20px;
+  margin: 15px 0;
+  border-bottom: 1.5px dotted #7e5f4d;
+  background-color: rgba(255,255,255,0.7);
+}
+
+.qa_inquiry {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.qa_inq_title {
+  box-sizing: border-box;
+  width: 45%;
+  border: solid 3px black;
+  padding: 5px;
+  margin: 60px auto 40px;
+}
+
+.qa_inq_title h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.qa_inq_form {
+  box-sizing: border-box;
+  width: 70%;
+  padding: 5px;
+  margin: 40px auto;
+}
+
+.qa_textarea {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#mail,
+#cont_name{
+  width: 250px;
+  height: 25px;
+}
+
+.qa_send {
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.qa_send button {
+  width: 20%;
+}
+
+
+/* introduction.php */
+.intro_banner {
+  width: 100%;
+  height: 80px;
+  background-color: #ffdead;
+}
+
+
+.intro_search {
+  width: 60%;
+  margin: 60px auto 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+	padding: 10px;
+	color: rgb(149, 76, 11);
+	margin: 3px auto;
+	width: 60%;
+	border: solid 2px rgb(149, 76, 11);
+	border-radius: 3px;
+	font-size:16px;
+}
+
+.intro_search_bt{
+  margin: 15px auto 20px;
+  text-align: center;
+}
+
+.intro_search_bt button {
+  width: 15%;
+  height: 35px;
+  font-size: 16px;
+  background-color: rgb(148, 97, 52);
+  color: rgb(251, 246, 238);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.intro {
+  width: 100%;
+  margin: 60px 0 100px;
+}
+
+.intro_shop {
+  box-sizing: border-box;
+  width: 75%;
+  height: auto;
+  margin: 15px auto 50px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 5px dotted #ffdead;
+}
+.intro_shop_img {
+  width: 40%;
+  padding: 10px;
+}
+
+.intro_shop_img img {
+  width: 100%;
+}
+
+.intro_shop_info {
+  width: 60%;
+  padding: 20px;
+}
+
+.intro_shop_data {
+  width: 100%;
+  margin: 20px;
+}
+
+.intro_shopname{
+  display: inline-block;
+  max-width: 80%;
+  height: auto;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intro_shopname p {
+  background: linear-gradient(transparent 90%, rgb(255, 145, 46) 90%);
+}
+
+.intro_shopdetail {
+  box-sizing: border-box;
+  width: 60%;
+  margin-bottom: 20px;
+}
+.intro_shopdetail p {
+  margin-bottom: 5px;
+}
+
+
+.intro_morebtn button {
+  width: 85%;
+  height: 40px;
+  background-color: rgb(251, 246, 238);
+  border: 1.5px solid rgb(149, 76, 11);
+  color: rgb(149, 76, 11);
+  font-weight: bolder;
+  border-radius: 5px;
+}
+
+.intro_morebtn button:hover {
+  background-color: rgba(255, 145, 46, 0.2);
+  cursor: pointer;
+}
+
+
+
+
+/** login.html **/
+
+.login_input {
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+#login_id {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+#login_form {
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 3px dotted rgb(205, 130, 65);
+  background-color: rgb(251, 246, 238);
+}
+
+.login_abbreviation {
+  text-align: center;
+}
+
+
+/** index.html **/
+
+.index_slider {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./images/slider1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;/*短いサイズに合わせる*/
+  transition: all 600ms;
+}
+.index_jumpbtn {
+  width: 260px;
+  font-size: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 5px dotted rgb(255, 142, 43);
+}
+.index_jumpbtn p {
+  text-align: center;
+}
+.index_jumpbtn:hover {
+  opacity: 0.6;
+}
+
+.index_buy_process {
+  margin: 80px 0;
+}
+.index_process {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.index_process_img {
+  width: 250px;
+  height: 270px;
+  border-radius: 20px;
+}
+.index_process_img img {
+  width: 100%;
+}
+
+.index_picup {
+  margin: 90px 0;
+}
+.index_picup_article {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.index_picup_contents {
+  width: 250px;
+  height: 270px;
+  margin: 20px 0;
+  background-color: rgb(251, 246, 238);
+  border: 2px solid rgb(149, 76, 11);
+}
+
+.index_picup_img {
+  margin: 8px auto;
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+}
+.index_picup_title {
+  text-align: center;
+}
+.index_picup_title p {
+  font-size: 30px;
+}
+
+
+.mypage_contents {
+  width: 45%;
+  margin: 30px auto 40px;
+}
+
+.mypage_contents_btn {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 65px;
+  border: 1px solid rgb(149, 76, 11);
+  background-color: rgb(250, 239, 225);
+  margin: 20px auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.mypage_contents_btn:hover {
+  background-color: rgba(252, 201, 139, .5);
+}
+
+.mypage_content_text p {
+  font-size: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+.mypage_icon {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.mypage_icon img {
+  width: 28px;
+  height: auto;
+}
+
+.mypage_session {
+  text-align: center;
+  margin-bottom: 65px;
+}
+.mypage_session button {
+  width: 150px;
+  height: 35px;
+  font-size: 15px;
+  color: rgb(251, 246, 238);
+  background-color: rgb(149, 95, 51);
+  border: 1px solid rgb(149, 76, 11);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mypage_session button:hover {
+  background-color: rgb(95, 59, 29);
+}
+
+
+/** board.html **/
+.board_list_wrapper {
+  width: 100%;
+  margin: 0 0 60px;
+}
+
+.board_list {
+  width: 700px;
+  padding: 10px 30px;
+  display: flex;
+  margin: 0 auto 20px;
+  border: 1.5px solid rgb(177, 136, 100);
+  border-radius: 8px;
+}
+
+.board_mainvisual img {
+  width: 200px;
+  height: 200px;
+  margin-right: 30px;
+}
+
+.board_text {
+  padding: 15px;
+  max-width: 460px;
+}
+.board_text h3 {
+  font-size: 20px;
+  margin-bottom: 13px;
+  border-bottom: 2px dotted rgb(205, 130, 65);
+}
+
+
+/** s_main.html **/
+.s_main_shopint {
+  width: 800px;
+  height: auto;
+  margin: 80px auto;
+}
+
+.s_main_mainvisual {
+  text-align: center;
+}
+
+.s_main_contents {
+  margin: 30px;
+}
+.s_main_shopcomment {
+  margin: 10px 0 0 0;
+}
+
+.s_main_editbtn {
+  width: 100px;
+  height: 30px;
+  border: 1px solid black;
+  margin: 50px auto;
+}
+
+.s_main_editbtn p {
+  text-align: center;
+}
+
+.s_main_editbtn:hover {
+  background-color: rgb(247, 204, 148);
+}
+
+/* reservation.php */
+
+.reserve_shopname{
+  width: 500px;
+  margin: 30px auto 17px;
+  padding-left: 30px;
+  border-bottom: 1.5px dotted rgb(205, 130, 65);
+  font-size: 28px;
+}
+  .reserve_table {
+    min-width: 500px;
+    margin: 0 auto 40px;
+    font-size: 20px;
+  }
+
+  #re_left {
+    padding-left: 20px;
+  }
+
+  #re_right {
+    padding-left: 40px;
+  }
+
+  .reserve_btn {
+    text-align: center;
+    margin: 50px;
+  }
+  
+  .reserve_btn button {
+    border: none;
+    width: 130px;
+    height: 30px;
+    color: rgb(251, 246, 238);
+    background-color: rgb(167, 113, 66);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reserve_btn button:hover {
+    background-color: rgb(115, 73, 36);
+  }
+  
+  .reserve_btn input {
+    border: none;
+    width: 130px;
+    height: 30px;
+    color: rgb(251, 246, 238);
+    background-color: rgb(167, 113, 66);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reserve_btn input:hover {
+    background-color: rgb(115, 73, 36);
+  }
+  
+/* misepage.php */
+.mise_main {
+  margin: 50px 0;
+}
+.mise_main_box {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.mise_image {
+  width: 500px;
+  height: 375px;
+  padding: 10px;
+}
+
+.mise_image img{
+  width: 100%;
+  height: auto;
+}
+
+.mise_shop {
+  padding: 20px 0 0 15px;
+}
+
+.mise_shopdetail {
+  width: 450px;
+  margin-bottom: 15px;
+}
+
+.mise_shopdetail h1{
+  font-size: 45px;
+}
+
+
+.mise_map {
+  width: 450px;
+  height: 230px;
+  background-color: #f1cc95;
+}
+.mise_map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.menu_wrapper{
+  display: flex;
+  margin: 60px 150px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu_article{
+  text-align: center;
+  margin-top: 20px;
+}
+  
+.menu_box {
+  width: 230px;
+  margin: 40px;
+  text-align: left;
+}
+
+.menu_box img{
+  width: 90%;
+  padding: 8px;
+  border: 1.5px solid rgb(149, 76, 11);
+}
+
+.menu_content {
+  padding: 0 7px;
+}
+
+.menu_text {
+  min-height: 130px;
+}
+
+.menu_title {
+  margin: 7px 0;
+}
+
+.menu_title h2 {
+  display: inline;
+  background: linear-gradient(transparent 85%, rgba(255, 145, 46, .8) 85%);
+}
+
+#menu_price {
+  font-size: 20px;
+}
+
+.order_btn select {
+  border: 1.5px solid rgb(149, 76, 11);
+}
+
+.order_btn {
+  text-align: center;
+  margin-top: 7px;
+}
+
+.menu_submit input {
+  width: 115px;
+  height: 26px;
+  color: rgb(251, 246, 238);
+  background-color: rgb(167, 113, 66);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu_submit input:hover {
+  background-color: rgb(115, 73, 36);
+}
+  
+/* entory.php */
+/* misetouroku.php */
+
+#entory_attention {
+  border: none;
+  font-weight: lighter;
+}
+
+
+/* cart.php */
+.cart_none {
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_none p {
+  font-size: 22px;
+}
+
+
+.cart_list_content {
+  width: 720px;
+  min-height: 100px;
+  margin: 50px auto;
+  display: flex;
+  padding: 25px;
+  border-bottom: dotted 3px rgb(247, 204, 148);
+  position: relative;
+}
+
+.cart_list small{
+  font-size: 10px;
+}
+
+.cart_productimg img{
+  width: 100px;
+  height: auto;
+  margin: auto 0;
+}
+
+.cart_product {
+  margin: 0 20px 0 20px;
+  max-width: 460px;
+}
+.cart_productname p {
+  font-size: 25px;
+}
+
+.cart_shopname p {
+  cursor: pointer;
+}
+.cart_shopname:hover {
+  opacity: 0.8;
+}
+
+
+.cart_detail {
+  position: absolute;
+  right: 10px;
+  padding: 15px;
+}
+.cart_detail li {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.cart_detail p {
+  font-size: 28px;
+}
+.cart_detail select {
+  width: 60px;
+}
+#cart_select {
+  margin-top: 10px;
+}
+.cart_count {
+  margin-right: 20px;
+}
+.yen {
+  font-size: 23px;
+}
+
+.cart_delete,
+.cart_change {
+  border: none;
+  color: rgb(251, 246, 238);
+  border-radius: 2px;
+}
+.cart_delete {
+  
+  background-color: rgb(118, 85, 57);
+}
+.cart_change {
+  
+  background-color: rgb(243, 126, 23);
+}
+
+.cart_btn {
+  text-align: center;
+  margin: 50px;
+}
+
+.cart_btn button {
+  border: none;
+  width: 100px;
+  height: 30px;
+  color: rgb(251, 246, 238);
+  background-color: rgb(167, 113, 66);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart_btn button:hover {
+  background-color: rgb(115, 73, 36);
+}
+
+/* confir_list.php */
+.confir_list {
+  margin-bottom: 100px;
+}
+
+.confir_list_shop {
+  display: flex;
+  margin: 0 auto;
+  width: 700px;
+  min-height: 130px;
+  margin-bottom: 50px;
+  border-bottom: 2px dotted rgb(239, 156, 84);
+}
+
+.confir_list_img {
+  margin-left: 20px;
+}
+
+.confir_list_img img {
+  width: 175px;
+  height: auto;
+  padding: 5px;
+}
+
+.confir_list_detail {
+  padding-top: 5px;
+  margin-left: 40px;
+}
+
+.confir_list_data {
+  margin-bottom: 11px;
+}
+
+.confir_list_shopname {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.confir_list_btn {
+  width: 150px;
+  height: 30px;
+  background-color: rgb(251, 249, 238);
+  border: 1.5px solid rgb(149, 76, 11);
+  border-radius: 5px;
+  
+}
+.confir_list_btn:hover {
+  background-color: rgba(255, 145, 46, 0.2);
+  cursor: pointer;
+}
+
+.confir_list2_data {
+  margin-bottom: 10px;
+}
+
+.confir_list_reserve {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+/* pass_change.php */
+.pass_change {
+  width: 100%;
+}
+
+.change_errormes {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.change_errormes p {
+  font-size: 18px;
+}
+
+#old_pass,
+#new_pass,
+#pass_check {
+  width: 280px;
+  height: 30px;
+}
+
+
+.pass_change_bt {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* accountinfo_change.php */
+.acc_change {
+  width: 100%;
+}
+
+/* booking.php */
+.booking_is_done {
+  margin: 150px 0 100px;
+}
+
+.booking_is_done h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.booking_info {
+  width: 80%;
+  margin: 20px auto 50px;
+}
+
+.booking_info h4 {
+  width: 20%;
+  font-size: 28px;
+  border: solid 3px rgb(149, 76, 11);
+  text-align: center;
+}
+
+.booking_info p {
+  font-size: 20px;
+  text-align: center;
+  margin: 25px auto;
+}
+
+
+/** check.php **/
+
+.check_content {
+  width: 600px;
+  margin: 0 auto 80px;
+}
+
+.check_confirm {
+  margin: 30px 0 50px;
+}
+
+.check_control {
+  margin-bottom: 15px;
+}
+
+.check_control span {
+  font-size: 22px;
+}
+
+.check_submit {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.check_submit p {
+  font-size: 16px;
+}
+
+.check_changebtn {
+  display: block;
+  width: 150px;
+  height: 30px;
+  background-color: rgb(148, 97, 52);
+  color: rgb(251, 246, 238);
+  margin-right: 30px;
+  border-radius: 4px;
+}
+
+.check_registerbtn {
+  display: block;
+  width: 150px;
+  height: 30px;
+  color: rgb(251, 246, 238);
+  background-color: rgb(255, 142, 43);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.check_changebtn:hover {
+  background-color: rgb(98, 65, 36);
+}
+.check_registerbtn:hover {
+  background-color: rgb(255, 178, 111);
+}
+
+
+/** thank.php **/
+
+.thank {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.thank_content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 500px;
+  height: 100px;
+}
+
+.thankbtn {
+  width: 170px;
+  height: 35px;
+  background-color: #f6d9ae;
+  border: none;
+  color: rgb(113, 58, 10);
+  border-radius: 8px;
+}
+
+.thankbtn:hover {
+  background-color: #f1cc95;
+}
+
+
+/** product **/
+
+.product_shopname {
+  width: 75%;
+  margin: 25px auto;
+}
+.product_shopname p {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.product_table {
+  margin: 0 auto;
+}
+
+.product_table th {
+  border-bottom: 2px solid rgb(255, 142, 43);
+}
+.product_table td {
+  border-bottom: 2px dotted rgb(255, 197, 147);
+  padding: 15px;
+}
+
+#p_th {
+  height: 50px;
+}
+
+#p_image {
+  width: 150px;
+  text-align: center;
+}
+#p_image img {
+  width: 80%;
+}
+
+#p_name {
+  width: 180px;
+}
+
+#p_comment {
+  width: 330px;
+}
+
+#p_operate button{
+  color: rgb(251, 246, 238);
+  background-color: rgb(115, 73, 36);
+  border: none;
+  border-radius: 4px;
+}
+
+.product_btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 30px 80px;
+}
+
+.product_addbtn {
+  display: block;
+  width: 150px;
+  height: 30px;
+  margin-right: 30px;
+  color: rgb(251, 246, 238);
+  background-color: rgb(167, 113, 66);
+  border-radius: 4px;
+}
+
+.product_backbtn {
+  display: block;
+  width: 150px;
+  height: 30px;
+  color: rgb(251, 246, 238);
+  background-color: rgb(255, 142, 43);
+  border-radius: 4px;
+}
+
+.product_addbtn:hover {
+  background-color: rgb(108, 70, 38);
+}
+.product_backbtn:hover {
+  background-color: rgb(255, 178, 111);
+}
+
+/* ---jquery ---*/
+.fadeIn {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  transform: translateY(30px);
+}
+
+.fadeIn.animated {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
